@@ -7,14 +7,15 @@ public class Copy {
 
     public static void copyFile(String source,String dest) throws IOException {
 
-        try (FileInputStream in= new FileInputStream(source);FileOutputStream out = new FileOutputStream(dest)) {
+        try (FileInputStream in= new FileInputStream(source);
+             FileOutputStream out = new FileOutputStream(dest)) {
             byte[] file = new byte[1024];
             int leng;
             while ((leng = in.read(file)) > 0) {
                  out.write(file,0, leng);
             }
         }
-            finally {
+        finally {
             System.out.println("Finish");
         }
     }
